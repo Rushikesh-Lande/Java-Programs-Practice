@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student Details</title>
+   <style>
+        /* Your CSS styles go here */
+        body {
+            background: url('img/02.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 700px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #333;
+        }
+        th {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        td {
+            padding: 8px;
+        }
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="date"] {
+            width: 50%;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        .all-students-button {
+            float: right;
+            margin-top: -20px;
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <a th:href="@{/student/stdList}" id="all-students-button">All Student List</a>
+    <form th:action="@{/student/update}" method="post">
+        <table width="700" border="0" align="center" cellpadding="0" cellspacing="5">
+            <tr>
+                <th width="25%" height="60">&nbsp;</th>
+                <th><p>Edit Student Details</p></th>
+                <th width="10%">&nbsp;</th>
+            </tr>
+            <tr>
+                <td><strong>Name:</strong></td>
+                <td><input name="name" type="text" size="35" th:value="${student.name}" required/></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>DOB:</strong></td>
+                <td><input type="date" name="dob" size="35" th:value="${student.dob}" required/></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>Gender:</strong></td>
+                <td>
+                    <input type="radio" name="gender" value="male" th:checked="${student.gender == 'male'}" required>Male
+                    <input type="radio" name="gender" value="female" th:checked="${student.gender == 'female'}">Female
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>Email:</strong></td>
+                <td><input name="email" type="email" size="35" th:value="${student.email}" required/></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>Address:</strong></td>
+                <td><input name="address" type="text" size="35" th:value="${student.address}" required/></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong>School:</strong></td>
+                <td>
+                    <select id="slct1" name="school" onchange="populate(this.id,'slct2')" required>
+                        <option value="">Select..</option>
+                        <option value="Medicine and Health Sciences" th:selected="${student.school == 'Medicine and Health Sciences'}">Medicine and Health Sciences</option>
+                        <option value="Law" th:selected="${student.school == 'Law'}">Law</option>
+                        <option value="Business and Economics">Business and Economics</option>
+                        <option value="Science,Engineering and Technology">Science,Engineering and Technology</option>
+                        <option value="Education">Education</option>
+                        <option value="Pharmacy">Pharmacy</option>
+                    </select>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <!-- Add more form rows with pre-filled values here -->
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="2" align="center">
+                    <input type="hidden" name="studentId" th:value="${student.studentId}" />
+                    <button type="submit">Update</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
