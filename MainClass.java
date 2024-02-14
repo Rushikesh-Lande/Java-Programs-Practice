@@ -1,7 +1,7 @@
 class MainClass{
   public static void main(String[] args){
 
-         FibonachhiSeriesEx.fSeries(8);
+         PrintNaturalNo.nNo(2,5);
          System.out.println();
 }
 }
