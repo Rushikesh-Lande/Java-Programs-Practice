@@ -1,12 +1,15 @@
+import java.util.*;
 class MainClass{
   public static void main(String[] args){
       // int[] arr={ 12,12,54,5,4,5,5,5,4,752,-4,5,333,-4};
-        //int[] result=FindDuplicateInArray.findDuplicate(arr);
+        int[] i1 = {1,0,0, 2, 3,0, 4, 5, 4,0,-1};
+        int[] i2 = {3, 4, 5, 6, 7, 4};
+      
+      List<Integer> result=SeparateZero.sZero(i1);
+      System.out.print(result);
 
-        int[] array1 = {1, 2, 3, 4, 5};
-        int[] array2 = {5, 6, 7, 8, 9};
-        int[] array3 = {1, 2, 3, 4, 5};
+       //for(int a:result){ System.out.print(" "+a);}
 
-       System.out.println("Value= "+CheckArrayEquality.cEquality(array1,array3));
+
 }
 }
