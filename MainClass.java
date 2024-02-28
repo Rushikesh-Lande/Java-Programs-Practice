@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.Arrays;
 class MainClass{
   public static void main(String[] args){
-      // int[] arr={ 12,12,54,5,4,5,5,5,4,752,-4,5,333,-4};
+      /* int[] arr={ 12,12,54,5,4,5,5,5,4,752,-4,5,333,-4};
        // int[] i1 = {1,0,0, 2, 3,0, 4, 5, 4,0,-1};
        int[] i2 = {3, 4, 5, 6, 7, 4};
       
@@ -14,6 +14,11 @@ class MainClass{
 List<Integer> integerList = Arrays.asList(1, 4, 5, 3, 7, 8, 6);
         int[] aaa=ConvertArray.cAr(integerList);
 
-       for(int a:aaa){System.out.println(a);}
+       for(int a:aaa){System.out.println(a);}*/
+
+     // CountOccurrenceInArray.cO(new int[] { 12,12,54,5,4,5,5,5,4,752,-4,5,333,-4});
+
+        int[] array= ReverseArrayExmple.rA(new int[] { 12,12,54,5,4,5,0});
+      for(int a:array){ System.out.print(" "+a);}
 }
 }
