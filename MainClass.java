@@ -18,7 +18,7 @@ List<Integer> integerList = Arrays.asList(1, 4, 5, 3, 7, 8, 6);
 
      // CountOccurrenceInArray.cO(new int[] { 12,12,54,5,4,5,5,5,4,752,-4,5,333,-4});
 
-        int[] array= ReverseArrayExmple.rA(new int[] { 12,12,54,5,4,5,0});
+        int[] array= RemoveArrayDuplicates.rD(new int[] { 12,12,54,5,4,5,0,0,54});
       for(int a:array){ System.out.print(" "+a);}
 }
 }
